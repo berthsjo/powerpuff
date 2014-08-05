@@ -1,8 +1,7 @@
 
 
 
-
-
+<?php require('includes/config.php'); ?>
 
 
 //Indexfilen listar alla poster från post-tabellen i databasen.
@@ -10,8 +9,8 @@
 //fortsätter sedan hämta i nummerordning. Inläggen loopas igenom och vid varje loop visas
 //titel, beskrivning, datum och en länk till hela inlägget.
 
-//
-<?php require('includes/config.php'); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
