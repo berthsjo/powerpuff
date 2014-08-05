@@ -2,6 +2,8 @@
 // Inkluderar config-filen 
 require_once('../includes/config.php');
 
+// Byggd som skriv-post sidan med lite undantag. 
+// Använder UPDATE statement istället för INSERT INTO för att matcha rätt kolumner och place holders.
 // Om man inte är inloggad skickas man till login.php
 if(!$user->is_logged_in()){ header('Location: login.php'); }
 ?>
