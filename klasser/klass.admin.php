@@ -1,53 +1,70 @@
-//Här kan användaren logga in och logga ut, verifiera password och krypterar även passwordet.
+<?php
+
+include('class.password.php');
 
 // Funktionen _construct anropas så snart en klass körs, metoden skickar en koppling till databasen som tillhör en
 //variabel inom klassen. Detta lilla trix gör att alla metoder får tillgång till databasen.
 
+class User extends Password{
+
     private $db;
 
-    public function __construct($db){
-    $this->db = $db;
-    }
+  function __construct($db){
+    parent::__construct();
 
-
+    $this->_db = $db;
+  }
 
 //För att verifiera om användaren är inloggad använder vi metoden is_logged_in()
 //Den söker efter sessionen "loggedin" och är den true så är det en användare inloggad annars
 //så returnerar den inget.
 
-    public function is_logged_in(){
+
+  public function is_logged_in(){
     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-    return true;
+      return true;
     }
+  }
+
+
+//Hämtar krypterade lösen kopplat till användarnamnet
+
+  private function get_user_hash($username){
+
+    try {
+
+      $stmt = $this->_db->prepare('SELECT password FROM blog_members WHERE username = :username');
+      $stmt->execute(array('username' => $username));
+
+      $row = $stmt->fetch();
+      return $row['password'];
+
+    } catch(PDOException $e) {
+        echo '<p class="error">'.$e->getMessage().'</p>';
     }
+  }
 
+//logga in
+  public function login($username,$password){
 
+    $hashed = $this->get_user_hash($username);
 
-//För att skapa ett krypterat lösenord när vi lägger till nya admins till bloggen har vi metoden create_hash
-//Det finns inbyggd kryptering i funktionen.
+    if($this->password_verify($password,$hashed) == 1){
 
-      public function create_hash($value)
-    {
-    return $hash = crypt($value, '$2a$12$'.substr(str_replace('+', '.', base64_encode(sha1(microtime(true), true))), 0, 22));
+        $_SESSION['loggedin'] = true;
+        return true;
     }
+  }
+
+ //logga ut
+  public function logout(){
+    session_destroy();
+  }
+
+}
 
 
-//För att verifiera krypteringen används denna metod:
-
-    private function verify_hash($password,$hash)
-    {
-    return $hash == crypt($password, $hash);
-    }
-
-In order to verify a password matched a password given on login the hashed password needs to be fetched from the database,
-the username is passed to the database and the hashed password is returned
-
-//För att verifiera att ett pass
-
-
-
-
-
+?>
 
 
 
