@@ -16,8 +16,8 @@
 <head>
     <meta charset="utf-8">
     <title>Blog</title>
-    <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/meyerReset.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
