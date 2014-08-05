@@ -1,4 +1,4 @@
-<img src="bilder/puff.png">
+<img src="../bilder/puff.png">
 <ul id='adminmeny'>
   <li><a href="index.php">Blogg</a></li>
   <li><a href="anvandare.php">Användare</a></li>
