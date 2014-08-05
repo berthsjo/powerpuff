@@ -14,28 +14,23 @@ p {
   color: #000;
   text-align: center;
 }
-.smallimg {
-  width: 400px;
-  height: 400px;
-}
-
 #wrapper {
   margin:auto;
   width:900px;
 }
 
-#login {
+#loggain {
   border: 1px solid #000;
   margin: 100px auto 0;
   padding: 0;
   width: 300px;
 }
 
-#adminmenu {
+#adminmeny {
   padding-left: 0;
 }
 
-#adminmenu li {
+#adminmeny li {
   float: left;
   list-style: none;
   margin-right: 20px;
