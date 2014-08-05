@@ -34,7 +34,7 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 		
 
 		} else {
-			$message = '<p class="fel">Fel användarnamn och/eller lösenord</p>';
+			$message = '<p class="error">Fel användarnamn och/eller lösenord</p>';
 		}
 	}
 

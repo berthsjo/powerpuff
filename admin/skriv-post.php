@@ -60,7 +60,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 		}
 
 		if($postCont ==''){
-			$error[] = 'Lägg till innehållet.';
+			$error[] = 'Lägg till innehåll.';
 		}
 
 		if(!isset($error)){
