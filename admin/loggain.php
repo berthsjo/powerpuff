@@ -26,7 +26,7 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 		$username = trim($_POST['username']);
 		$password = trim($_POST['password']);
 		
-		if($user->loggain($username,$password)){ 
+		if($user->login($username,$password)){ 
 
 			// Efter att man loggat in, skickas man till indexsidan
 			header('Location: index.php');

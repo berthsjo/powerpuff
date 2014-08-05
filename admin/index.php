@@ -20,12 +20,14 @@ if(isset($_GET['delpost'])){
 <head>
   <meta charset="utf-8">
   <title>Admin</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
+  <link rel="stylesheet" href="../css/meyerReset.css">
+  <link rel="stylesheet" href="../css/style.css">
   <script language="JavaScript" type="text/javascript">
+
+  // Funktion som raderar inlägg och redirectar
   function delpost(id, title)
   {
-  	if (confirm("Är du säker på att dy vill radera '" + title + "'"))
+  	if (confirm("Är du säker på att du vill radera '" + title + "'"))
 	  {
 	  	window.location.href = 'index.php?delpost=' + id;
 	  }
@@ -35,11 +37,13 @@ if(isset($_GET['delpost'])){
 <body>
 
 	<div id="wrapper">
-
-	<?php include('meny.php');?>
+	
+	<?php 
+	// Lägger till menyn
+	include('meny.php');?>
 
 	<?php 
-	// Visa meddelande från skriv-post/redigera-post
+	// Hämtar meddelande från skriv-post/redigera-post
 	if(isset($_GET['action'])){ 
 		echo '<h3>Post '.$_GET['action'].'.</h3>'; 
 	} 
@@ -47,8 +51,8 @@ if(isset($_GET['delpost'])){
 
 	<table>
 	<tr>
-		<th>Title</th>
-		<th>Date</th>
+		<th>Titel</th>
+		<th>Datum</th>
 		<th>Action</th>
 	</tr>
 
