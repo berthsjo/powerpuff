@@ -12,7 +12,7 @@ define('DBUSER','root');
 define('DBPASS','root');
 define('DBNAME','db');
 
-$db = new PDO("mysql:host=".DBHOST.";post=8889;dbname="
+$db = new PDO("mysql:host=".DBHOST.";post=8888;dbname="
   .DBNAME, DBUSER, DBPASS);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::
   ERRMODE_EXCEPTION);
