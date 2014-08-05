@@ -10,8 +10,8 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 <head>
   <meta charset="utf-8">
   <title>Logga in Admin</title>
-  <link rel="stylesheet" href="../style/meyerReset.css">
-  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../css/meyerReset.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
