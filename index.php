@@ -1,17 +1,12 @@
-
-
-
-<?php require('includes/config.php');
-
+<?php
+require 'includes/config.php';
 
 //Indexfilen listar alla poster från post-tabellen i databasen.
 //En query körs för att välja kolummner genom postID från från tabellen blog_post och
 //fortsätter sedan hämta i nummerordning. Inläggen loopas igenom och vid varje loop visas
 //titel, beskrivning, datum och en länk till hela inlägget.
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
