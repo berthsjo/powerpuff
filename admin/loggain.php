@@ -2,6 +2,9 @@
 // Inkluderar config-filen 
 require_once('../includes/config.php');
 
+error_reporting(E_ALL); 
+ini_set("display_errors", "1");
+
 // Det här är en ganska simpel inloggningssida, först kollar den om man redan är inloggad
 if( $user->is_logged_in() ){ header('Location: index.php'); } 
 ?>
