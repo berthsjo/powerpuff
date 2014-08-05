@@ -1,11 +1,9 @@
 <?php
 
-include('class.password.php');
-
 // Funktionen _construct anropas så snart en klass körs, metoden skickar en koppling till databasen som tillhör en
 //variabel inom klassen. Detta lilla trix gör att alla metoder får tillgång till databasen.
 
-class User extends Password{
+class User extends Password {
 
     private $db;
 
