@@ -18,7 +18,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::
   ERRMODE_EXCEPTION);
 
 // Tidszonen
-date_default_timezone_set('Europe/Stockholm');
+date_default_timezone_set('Europe/London');
 
 // Autoload är för att klasserna ska inkluderas automatiskt. Så slipper man inkludera allt manuellt.
 function __autoload($class) {
