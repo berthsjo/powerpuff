@@ -2,7 +2,7 @@
 // Inkludera config.php i varje fil
 require_once('../includes/config.php');
 
-// Om man inte är inloggag skickas man tillbaka till logga in framsidan
+// Om man inte är inloggad skickas man tillbaka till logga in framsidan
 if(!$user->is_logged_in()){header('location:login.php'); }
 
 // Visa meddelande från skriv-post / redigera-post sidan
