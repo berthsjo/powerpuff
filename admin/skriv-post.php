@@ -1,9 +1,9 @@
 <?php
-// Inkluderar config-filen 
+// Inkluderar config-filen
 require_once('../includes/config.php');
 
-// Sidan består av formulär som är uppbyggd med textområden och inputs.
-// Varje del blir en variabel i PHP när formuläret skickas. 
+// Sidan består av formulär som är uppbyggd med textområden.
+// Varje del blir en variabel i PHP när formuläret skickas.
 // Vi använder också ett litet färdigt verktyg som heter tinyMCE för att redigera/lägga till inlägg (http://www.tinymce.com).
 
 // Om man inte är inloggad skickas man till login.php
