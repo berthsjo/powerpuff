@@ -45,5 +45,5 @@ function __autoload($class) {
   }
 }
 
-// Här kollar vi så user finns i databas !!! Kolla upp mer
+// Skapar användare i databasen
 $user = new User($db);
