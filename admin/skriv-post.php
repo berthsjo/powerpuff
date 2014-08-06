@@ -36,9 +36,6 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 <div id="wrapper">
 
 	<?php include('meny.php');?>
-	<p><a href="./">Admin Index</a></p>
-
-	<h2>Skriv inlägg</h2>
 
 	<?php
 
@@ -95,20 +92,20 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		}
 	}
 	?>
+	<div class="tiny">
+		<form action='' method='post'>
 
-	<form action='' method='post'>
+			<p><label>Titel</label><br />
+			<input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
 
-		<p><label>Title</label><br />
-		<input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
+			<p><label>Beskrivning</label><br />
+			<textarea name='postDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
 
-		<p><label>Description</label><br />
-		<textarea name='postDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
+			<p><label>Innehåll</label><br />
+			<textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
 
-		<p><label>Content</label><br />
-		<textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
+			<div class="tinybutton"><input type='submit' name='submit' value='Skicka'></div>
 
-		<p><input type='submit' name='submit' value='Submit'></p>
-
-	</form>
-
+		</form>
+	</div>
 </div>

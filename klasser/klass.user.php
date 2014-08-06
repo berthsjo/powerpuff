@@ -1,6 +1,6 @@
 <?php
 
-// Funktionen _construct anropas så snart en klass körs, metoden skickar en koppling till databasen som tillhör en
+// Funktionen _construct anropas så snart en klass körs, funktionen skickar en koppling till databasen som tillhör en
 //variabel inom klassen. Detta lilla trix gör att alla metoder får tillgång till databasen.
 
 class User extends Password {
@@ -13,7 +13,7 @@ class User extends Password {
     $this->_db = $db;
   }
 
-//För att verifiera om användaren är inloggad använder vi metoden is_logged_in()
+//För att verifiera om användaren är inloggad använder vi funktionen is_logged_in()
 //Den söker efter sessionen "loggedin" och är den true så är det en användare inloggad annars
 //så returnerar den inget.
 
@@ -25,7 +25,7 @@ class User extends Password {
   }
 
 
-//Hämtar krypterade lösen kopplat till användarnamnet
+//Hämtar krypterade lösenordet kopplat till användarnamnet
 
   private function get_user_hash($username){
 

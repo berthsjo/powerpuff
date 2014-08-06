@@ -1,6 +1,6 @@
 <?php
 // ob = Output Buffering är en inbyggd funktion i PHP
-// Så länge den är aktiv skickas ingen data från scriptet (utom till headern). 
+// Så länge den är aktiv skickas ingen data från scriptet (utom till headern).
 // Datan sparas i intern buffert.
 
 ob_start();
@@ -27,24 +27,23 @@ function __autoload($class) {
   // strtolower = konverterar namn till små bokstäver (anv. namn) kollar om filen finns och inkluderar den.
   $class = strtolower($class);
 
-    //if call from within assets adjust the path !!! Kolla upp mer
+    //classpath är en autoload
    $classpath = 'klasser/klass.'.$class . '.php';
    if ( file_exists($classpath)) {
       require_once $classpath;
   }
 
-  //if call from within admin adjust the path !!! Kolla upp mer
    $classpath = '../klasser/klass.'.$class . '.php';
    if ( file_exists($classpath)) {
       require_once $classpath;
   }
 
-  //if call from within admin adjust the path !!! Kolla upp mer
+
    $classpath = '../../klasser/klass.'.$class . '.php';
    if ( file_exists($classpath)) {
       require_once $classpath;
   }
 }
 
-// Här kollar vi så user finns i databas !!! Kolla upp mer
+// Skapar användare i databasen
 $user = new User($db);
