@@ -1,9 +1,9 @@
 <?php
-// Inkluderar config-filen 
+// Inkluderar config-filen
 require_once('../includes/config.php');
 
-// Byggd som skriv-post sidan med lite undantag. 
-// Använder UPDATE statement istället för INSERT INTO för att matcha rätt kolumner och place holders.
+// I princip byggd som skriv post sidan.
+// Använder UPDATE statement istället för INSERT INTO för att matcha rätt kolumner och placeholders(rutor).
 // Om man inte är inloggad skickas man till login.php
 if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 ?>
@@ -106,7 +106,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 			$stmt = $db->prepare('SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = :postID') ;
 			$stmt->execute(array(':postID' => $_GET['id']));
-			$row = $stmt->fetch(); 
+			$row = $stmt->fetch();
 
 		} catch(PDOException $e) {
 		    echo $e->getMessage();
@@ -133,4 +133,4 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 </div>
 
 </body>
-</html>	
+</html>
