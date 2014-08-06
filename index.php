@@ -6,19 +6,20 @@ require 'includes/config.php';
 //fortsätter sedan hämta i nummerordning. Inläggen loopas igenom och vid varje loop visas
 //titel, beskrivning, datum och en länk till hela inlägget.
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Blog</title>
-    <link rel="stylesheet" href="style/meyerReset.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="css/meyerReset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <div id="wrapper">
 
-    <h1>Blog</h1>
+    <h1>Puff.</h1>
     <hr />
 
     <?php

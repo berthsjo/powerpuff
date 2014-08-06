@@ -3,7 +3,7 @@
 require_once('../includes/config.php');
 
 // Kollar om användaren är inloggad, annars skickas man till loggain.php
-if(!$user->is_logged_in()){header('location:login.php'); }
+if(!$user->is_logged_in()){header('location:loggain.php'); }
 
 // Visar meddelande från skriv-post / redigera-post sidan
 if(isset($_GET['deluser'])){

@@ -7,7 +7,7 @@ require_once('../includes/config.php');
 // Vi använder också ett litet färdigt verktyg som heter tinyMCE för att redigera/lägga till inlägg (http://www.tinymce.com).
 
 // Om man inte är inloggad skickas man till login.php
-if(!$user->is_logged_in()){ header('Location: login.php'); }
+if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -17,8 +17,8 @@ $db = new PDO("mysql:host=".DBHOST.";port=8889;dbname=".DBNAME, DBUSER, DBPASS);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Tidszonen
-date_default_timezone_set('Europe/London');
-date_default_timezone_set('Europe/London');
+date_default_timezone_set('Europe/Stockholm');
+date_default_timezone_set('Europe/Stockholm');
 
 // Autoload är till för att klasserna ska inkluderas automatiskt.
 // Slipper inkludera allt manuellt.
