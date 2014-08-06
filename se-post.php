@@ -32,7 +32,6 @@ if($row['postID'] == ''){
 <body>
 
     <div id="wrapper">
-
         <h1>Blog</h1>
         <hr />
         <p><a href="./">Blog Index</a></p>
@@ -41,7 +40,7 @@ if($row['postID'] == ''){
     // Visar hela den valda posten.
         echo '<div>';
             echo '<h1>'.$row['postTitle'].'</h1>';
-            echo '<p>Posted on '.date('jS M Y', strtotime($row['postDate'])).'</p>';
+            echo '<p>Upplagd '.date('j M Y', strtotime($row['postDate'])).'</p>';
             echo '<p>'.$row['postCont'].'</p>';
         echo '</div>';
     ?>

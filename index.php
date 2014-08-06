@@ -35,7 +35,7 @@ require 'includes/config.php';
 
           echo '<div>';
             echo '<h1><a href="se-post.php?id='.$row['postID'].'">'.$row['postTitle'].'</a></h1>';
-            echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
+            echo '<p>Upplagd '.date('j M Y H:i', strtotime($row['postDate'])).'</p>';
             echo '<p>'.$row['postDesc'].'</p>';
             echo '<p><a href="se-post.php?id='.$row['postID'].'">Läs mer</a></p>';
           echo '</div>';
