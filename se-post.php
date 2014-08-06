@@ -33,19 +33,21 @@ if($row['postID'] == ''){
 
     <div id="wrapper">
         <img class="logindex" src="bilder/puff4.png">
-        <hr />
-        <p><a href="./">Blog Index</a></p>
+        <div id="wrapperind">
+        <p><a href="./">Startsidan</a></p>
 
     <?php
     // Visar den valda posten.
         echo '<div>';
             echo '<h1>'.$row['postTitle'].'</h1>';
             echo '<p>Upplagd '.date('j M Y', strtotime($row['postDate'])).'</p>';
+            echo '<hr/>';
             echo '<p>'.$row['postCont'].'</p>';
         echo '</div>';
     ?>
 
     </div>
+</div>
 
 </body>
 </html>

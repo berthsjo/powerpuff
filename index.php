@@ -18,9 +18,9 @@ require 'includes/config.php';
 <body>
 
   <div id="wrapper">
-
     <img class="logindex" src="bilder/puff4.png">
-    <hr />
+    <div id="wrapperind">
+
 
     <?php
     //Queryn för att visa inlägg ligger i ett try/catch-statement så att PDOExeption visar eventuella
@@ -46,6 +46,7 @@ require 'includes/config.php';
       }
     ?>
 
+  </div>
   </div>
 
 
