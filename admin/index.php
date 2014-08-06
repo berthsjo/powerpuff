@@ -54,7 +54,7 @@ if(isset($_GET['delpost'])){
 	<tr>
 		<th>Titel</th>
 		<th>Datum</th>
-		<th>Action</th>
+		<th> </th>
 	</tr>
 
 	<?php
