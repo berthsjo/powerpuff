@@ -11,7 +11,7 @@ require 'includes/config.php';
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog</title>
+    <title>Blogg</title>
     <link rel="stylesheet" href="css/meyerReset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,11 +23,10 @@ require 'includes/config.php';
     <hr />
 
     <?php
-    //Queryn för att visa inlägg ligger i ett try/catch-statement så att PDOExeption kan visa om det
-    //blir några errors.
+    //Queryn för att visa inlägg ligger i ett try/catch-statement så att PDOExeption visar eventuella
+    // errors.
+    //Varje inläggs ID skickas vidare till nästa sida med en sk query-string.
 
-    //inläggets id skickas vidare till nästa sida i en sk query-string.
-    //?id blir till en variabel som anger värdet i URLen.
       try {
 
         $stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
