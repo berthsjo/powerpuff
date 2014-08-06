@@ -1,6 +1,6 @@
 <?php
 
-//Här är allt smixismox med lösenord
+//Hur man krypterar lösenord
 if (!defined('PASSWORD_DEFAULT')) {
         define('PASSWORD_BCRYPT', 1);
         define('PASSWORD_DEFAULT', PASSWORD_BCRYPT);
