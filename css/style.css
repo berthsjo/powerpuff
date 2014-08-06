@@ -93,3 +93,28 @@ table tr td {border:1px solid #7c7c7c; padding:5px 6px;}
 table tr.alt td {background-color:#7c7c7c;}
 
 
+/* stil för tinymce */
+
+.tiny {
+  padding-top: 20px;
+  margin: 0;
+}
+
+.tinybutton {
+  padding: 30px;
+  text-align: center;
+}
+
+.tinybutton input {
+  padding: 10px;
+  background: #3d3d3d;
+  color: #fff;
+}
+
+.tiny p {
+  font-size: 80%;
+  text-align: left;
+  padding: 10px;
+}
+
+

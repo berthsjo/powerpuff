@@ -37,8 +37,6 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 	<?php include('meny.php');?>
 	<p><a href="./">Blog Admin Index</a></p>
 
-	<h2>Redigera inlägg</h2>
-
 
 	<?php
 
@@ -115,23 +113,23 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		}
 
 	?>
+	<div class="tiny">
+		<form action='' method='post'>
+			<input type='hidden' name='postID' value='<?php echo $row['postID'];?>'>
 
-	<form action='' method='post'>
-		<input type='hidden' name='postID' value='<?php echo $row['postID'];?>'>
+			<p><label>Titel</label><br />
+			<input type='text' name='postTitle' value='<?php echo $row['postTitle'];?>'></p>
 
-		<p><label>Title</label><br />
-		<input type='text' name='postTitle' value='<?php echo $row['postTitle'];?>'></p>
+			<p><label>Beskrivning</label><br />
+			<textarea name='postDesc' cols='60' rows='10'><?php echo $row['postDesc'];?></textarea></p>
 
-		<p><label>Description</label><br />
-		<textarea name='postDesc' cols='60' rows='10'><?php echo $row['postDesc'];?></textarea></p>
+			<p><label>Innehåll</label><br />
+			<textarea name='postCont' cols='60' rows='10'><?php echo $row['postCont'];?></textarea></p>
 
-		<p><label>Content</label><br />
-		<textarea name='postCont' cols='60' rows='10'><?php echo $row['postCont'];?></textarea></p>
+			<div class="tinybutton"><input type='submit' name='submit' value='Uppdatera'></div>
 
-		<p><input type='submit' name='submit' value='Update'></p>
-
-	</form>
-
+		</form>
+	</div>
 </div>
 
 </body>
