@@ -56,7 +56,7 @@ if(isset($_GET['deluser'])){
   <tr>
     <th>Användarnamn</th>
     <th>Email</th>
-    <th>Action</th>
+    <th> </th>
   </tr>
   <?php
     try {
@@ -70,7 +70,7 @@ if(isset($_GET['deluser'])){
         ?>
 
         <td>
-          <a href="edit-user.php?id=<?php echo $row['memberID'];?>">Edit</a>
+          <a href="edit-user.php?id=<?php echo $row['memberID'];?>">Redigera</a>
           <?php if($row['memberID'] != 1){?>
             | <a href="javascript:deluser('<?php echo $row['memberID'];?>','<?php echo $row['username'];?>')">Delete</a>
           <?php } ?>
