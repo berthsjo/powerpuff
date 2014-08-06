@@ -87,7 +87,7 @@ if(isset($_GET['delpost'])){
 	?>
 	</table>
 
-	<p><a href='skriv-post.php'>+ Nytt inlägg</a></p>
+	<div id="box"><p><a href='skriv-post.php' class="skrivpost">+ Nytt inlägg</a></p></div>
 
 </div>
 
