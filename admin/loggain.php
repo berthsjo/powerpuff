@@ -5,7 +5,7 @@ require_once('../includes/config.php');
 error_reporting(E_ALL); 
 ini_set("display_errors", "1");
 
-// Det här är en ganska simpel inloggningssida, först kollar den om man redan är inloggad
+// Kollar om man redan är inloggad
 if( $user->is_logged_in() ){ header('Location: index.php'); } 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 		
 		if($user->login($username,$password)){ 
 
-			// Efter att man loggat in, skickas man till indexsidan
+			// Efter att man loggat in, omdirigeras man till indexsidan
 			header('Location: index.php');
 			exit;
 		

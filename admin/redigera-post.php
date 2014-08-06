@@ -18,7 +18,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
   <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 
   <script>
-  	// Konverterar alla textområden till tinymce-editorn
+  	// Konverterar alla textområden till tinyMCE-editorn
           tinymce.init({
               selector: "textarea",
               plugins: [
@@ -73,7 +73,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 			try {
 
-				// Inkludera i databasen
+				// Inkluderar i databasen
 				$stmt = $db->prepare('UPDATE blog_posts SET postTitle = :postTitle, postDesc = :postDesc, postCont = :postCont WHERE postID = :postID') ;
 				$stmt->execute(array(
 					':postTitle' => $postTitle,
@@ -82,7 +82,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 					':postID' => $postID
 				));
 
-				// Omdirigera till indexsidan
+				// Omdirigerar till indexsidan
 				header('Location: index.php?action=updated');
 				exit;
 
@@ -97,7 +97,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	?>
 
 	<?php
-	// Kollar efter fel
+	// Kollar efter fel och hämtar felmeddelande
 	if(isset($error)){
 		foreach($error as $error){
 			echo $error.'<br />';

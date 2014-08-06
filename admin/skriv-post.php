@@ -4,7 +4,7 @@ require_once('../includes/config.php');
 
 // Sidan består av formulär som är uppbyggd med textområden och inputs.
 // Varje del blir en variabel i PHP när formuläret skickas. 
-// Vi använder också ett litet färdigt verktyg som heter tinymce för att redigera/lägga till inlägg (http://www.tinymce.com).
+// Vi använder också ett litet färdigt verktyg som heter tinyMCE för att redigera/lägga till inlägg (http://www.tinymce.com).
 
 // Om man inte är inloggad skickas man till login.php
 if(!$user->is_logged_in()){ header('Location: login.php'); }
@@ -19,7 +19,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
   <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 
   <script>
-  	// Konverterar alla textområden till tinymce-editorn
+  	// Konverterar alla textområden till tinyMCE-editorn
           tinymce.init({
               selector: "textarea",
               plugins: [
@@ -67,7 +67,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 			try {
 
-				// Inkludera i databasen
+				// Inkluderar i databasen
 				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (:postTitle, :postDesc, :postCont, :postDate)') ;
 				$stmt->execute(array(
 					':postTitle' => $postTitle,
@@ -76,7 +76,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 					':postDate' => date('Y-m-d H:i:s')
 				));
 
-				// Omdirigera till indexsidan
+				// Omdirigerar till indexsidan
 				header('Location: index.php?action=added');
 				exit;
 

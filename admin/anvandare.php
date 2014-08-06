@@ -1,14 +1,14 @@
 <?php 
-// Inkludera config.php i varje fil
+// Inkluderar config-filen
 require_once('../includes/config.php');
 
-// Om man inte är inloggad skickas man tillbaka till logga in framsidan
+// Kollar om användaren är inloggad, annars skickas man till loggain.php
 if(!$user->is_logged_in()){header('location:login.php'); }
 
-// Visa meddelande från skriv-post / redigera-post sidan
+// Visar meddelande från skriv-post / redigera-post sidan
 if(isset($_GET['deluser'])){
 
-  // Om användarid är 1 så ignorera, man ska inte kunna radera denna
+  // Ignorerar om användarid är detsamma som 1, man ska inte kunna radera denna
   if($_GET['deluser'] !='1'){
 
     $stmt = $db->prepare('DELETE FROM blog_members WHERE memberID = :memberID') ;
@@ -21,7 +21,7 @@ if(isset($_GET['deluser'])){
 }
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,7 @@ if(isset($_GET['deluser'])){
   <script language="JavaScript" type="text/javascript">
   function deluser(id, title)
   {
-    if (confirm("Är du säker på att du vill ta bort '" + title + "'"))
+    if (confirm("Är du säker på att du vill radera '" + title + "'"))
     {
       window.location.href = 'users.php?deluser=' + id;
     }
@@ -45,7 +45,7 @@ if(isset($_GET['deluser'])){
   <?php include('meny.php');?>
 
   <?php 
-  // Visa meddelande från skriv-post och redigera-post
+  // Visar meddelande från skriv-post och redigera-post
     if(isset($_GET['action'])){ 
     echo '<h3>User '.$_GET['action'].'.</h3>'; 
   } 

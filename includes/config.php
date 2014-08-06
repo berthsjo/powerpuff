@@ -1,12 +1,13 @@
 <?php
-// ob = Output Buffering som är en inbyggd funktion i PHP
-// Så länge sen är aktiv skickas ingen data från scriptet (utom till headern). Datan sparar i intern buffert.
+// ob = Output Buffering är en inbyggd funktion i PHP
+// Så länge den är aktiv skickas ingen data från scriptet (utom till headern). 
+// Datan sparas i intern buffert.
 
 ob_start();
 ob_start();
 session_start();
 
-// Databas kontakten, uppgifterna
+// Databasens kopplingar
 define('DBHOST','localhost');
 define('DBUSER','root');
 define('DBPASS','root');
@@ -19,7 +20,8 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 date_default_timezone_set('Europe/London');
 date_default_timezone_set('Europe/London');
 
-// Autoload är för att klasserna ska inkluderas automatiskt. Så slipper man inkludera allt manuellt.
+// Autoload är till för att klasserna ska inkluderas automatiskt.
+// Slipper inkludera allt manuellt.
 function __autoload($class) {
 
   // strtolower = konverterar namn till små bokstäver (anv. namn) kollar om filen finns och inkluderar den.
