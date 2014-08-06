@@ -32,7 +32,7 @@ if($row['postID'] == ''){
 <body>
 
     <div id="wrapper">
-        <h1>Blog</h1>
+        <img class="logindex" src="bilder/puff4.png">
         <hr />
         <p><a href="./">Blog Index</a></p>
 

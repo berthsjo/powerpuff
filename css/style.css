@@ -19,6 +19,9 @@ p {
 h1 {
   font-size: 20px;
 }
+img.logindex {
+  padding: 20px;
+}
 #logga {
   margin-left: 50%;
   margin-right: 50%;

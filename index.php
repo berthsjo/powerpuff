@@ -19,7 +19,7 @@ require 'includes/config.php';
 
   <div id="wrapper">
 
-    <h1>Puff.</h1>
+    <img class="logindex" src="bilder/puff4.png">
     <hr />
 
     <?php
