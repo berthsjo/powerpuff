@@ -16,6 +16,9 @@ p {
   text-align: center;
   font-family: 'PT Sans', sans-serif;
 }
+h1 {
+  font-size: 20px;
+}
 #logga {
   margin-left: 50%;
   margin-right: 50%;
