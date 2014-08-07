@@ -91,7 +91,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 
 setlocale(LC_ALL, 'sw_SW');
-echo datetime();
+
 
 //---------------------------------------
 
