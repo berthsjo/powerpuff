@@ -40,7 +40,7 @@ if($row['postID'] == ''){
     // Visar den valda posten.
         echo '<div>';
             echo '<h1>'.$row['postTitle'].'</h1>';
-            echo '<p>Upplagd '.date('j / N / Y', strtotime($row['postDate'])).'</p>';
+            echo '<p>Upplagd '.date('j/N/Y', strtotime($row['postDate'])).'</p>';
             echo '<hr/>';
             echo '<p>'.$row['postCont'].'</p>';
         echo '</div>';
