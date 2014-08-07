@@ -20,6 +20,10 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 date_default_timezone_set('Europe/Stockholm');
 date_default_timezone_set('Europe/Stockholm');
 
+//Språk
+//Ändra till svenska i datetime
+setlocale(LC_ALL, 'sv_SE');
+
 // Autoload är till för att klasserna ska inkluderas automatiskt.
 // Slipper inkludera allt manuellt.
 function __autoload($class) {

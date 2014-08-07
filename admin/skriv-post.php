@@ -85,16 +85,8 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 	}
 
-//--------------------------------------
-  //Ändra till svenska i datetime
 
 
-
-setlocale(LC_ALL, 'swedish');
-echo $swedish;
-
-
-//---------------------------------------
 
 	// Kollar efter fel
 	if(isset($error)){
