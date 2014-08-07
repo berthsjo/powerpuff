@@ -41,6 +41,9 @@ require 'includes/config.php';
 
         }
 
+         //Ändra till svenska i datetime
+        setlocale(LC_ALL, 'swedish');
+
       } catch(PDOException $e) {
           echo $e->getMessage();
       }
