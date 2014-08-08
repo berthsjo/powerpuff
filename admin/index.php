@@ -66,6 +66,7 @@ if(isset($_GET['delpost'])){
 			$stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC');
 			while($row = $stmt->fetch()){
 				
+			
 				echo '<tr>';
 				echo '<td>'.$row['postTitle'].'</td>';
 				echo '<td>'.date('j/N/Y', strtotime($row['postDate'])).'</td>';
