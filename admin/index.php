@@ -10,7 +10,7 @@ if(isset($_GET['delpost'])){
 	$stmt = $db->prepare('DELETE FROM blog_posts WHERE postID = :postID') ;
 	$stmt->execute(array(':postID' => $_GET['delpost']));
 
-	header('Location: index.php?action=deleted');
+	header('Location: index.php?action=');
 	exit;
 } 
 
@@ -46,7 +46,7 @@ if(isset($_GET['delpost'])){
 	<?php 
 	// Hämtar meddelande från skriv-post/redigera-post
 	if(isset($_GET['action'])){ 
-		echo '<h3>Post '.$_GET['action'].'.</h3>'; 
+		echo '<h3> '.$_GET['action'].'</h3>'; 
 	} 
 	?>
 
@@ -66,7 +66,7 @@ if(isset($_GET['delpost'])){
 			$stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC');
 			while($row = $stmt->fetch()){
 				
-			
+
 				echo '<tr>';
 				echo '<td>'.$row['postTitle'].'</td>';
 				echo '<td>'.date('j/N/Y', strtotime($row['postDate'])).'</td>';
