@@ -81,7 +81,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 				));
 
 				// Omdirigerar till indexsidan
-				header('Location: index.php?action=updated');
+				header('Location: index.php?action=');
 				exit;
 
 			} catch(PDOException $e) {
