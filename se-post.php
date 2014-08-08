@@ -41,7 +41,7 @@ if($row['postID'] == ''){
         echo '<div>';
             echo '<h1>'.$row['postTitle'].'</h1>';
             echo '<p>Upplagd '.date('j/N/Y', strtotime($row['postDate'])).'</p>';
-            echo '<hr/>';
+            echo '<br/>';
             echo '<p>'.$row['postCont'].'</p>';
         echo '</div>';
     ?>
