@@ -38,6 +38,7 @@ require 'includes/config.php';
             echo '<p>'.$row['postDesc'].'</p>';
             echo '<p><a href="se-post.php?id='.$row['postID'].'">Läs mer</a></p>';
           echo '</div>';
+          echo '<br/><br/>';
 
         }
 
