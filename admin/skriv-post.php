@@ -104,11 +104,11 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		$i = 0;
 
 		// whileloop söker igenom arryen efter en hashtag
-		while($i< $arr){
+		while($i< $arrc){
 
 		  if (substr($arr[$i], 0, 1) === $htag) {
 		  // så att #-markerade ord blir länkar
-		  echo $arr[$i] = "<a href='#'>".$arr[$i]."</a>";
+		      $arr[$i] = "<a href='#'>".$arr[$i]."</a>";
 
 		  }
 
