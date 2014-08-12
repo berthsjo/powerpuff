@@ -21,6 +21,7 @@ if(isset($_GET['delpost'])){
   <meta charset="utf-8">
   <title>Admin</title>
   <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../css/meyerReset.css">
   <link rel="stylesheet" href="../css/style.css">
   <script language="JavaScript" type="text/javascript">

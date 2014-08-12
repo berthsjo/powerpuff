@@ -55,8 +55,8 @@ hr {
 
 #adminmeny li {
   float: left;
-  list-style: none;
   margin-right: 20px;
+  list-style: none;
 }
 
 .clear {
@@ -82,6 +82,15 @@ hr {
 a.skrivpost {
   color: #fff;
   font-size: 12px;
+}
+p.menyn {
+  color: #f29709;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  text-transform: lowercase;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 p,li {
