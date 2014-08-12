@@ -85,6 +85,13 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 	}
 
+	// Kollar efter fel
+	if(isset($error)){
+		foreach($error as $error){
+			echo '<p class="error">'.$error.'</p>';
+		}
+	}
+	?>
 	<?php
 		function hashtag($string) {
 		//variabel kopplad till #
@@ -112,15 +119,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		return $string;
 		}
 		echo hashtag;
-		$>
-
-	// Kollar efter fel
-	if(isset($error)){
-		foreach($error as $error){
-			echo '<p class="error">'.$error.'</p>';
-		}
-	}
-	?>
+		?>
 	<div class="tiny">
 		<form action='' method='post'>
 
