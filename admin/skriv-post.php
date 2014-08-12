@@ -92,34 +92,18 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		}
 	}
 	?>
-	<?php
-		function hashtag($string) {
-		//variabel kopplad till #
-		$htag = "#";
-		// använder explode-funktionen för att konvertera strängen //till en array
-		//mellanrummet signalerar ny item i arrayen
 
-		$arr = explode(" ", $string);
-		$arrc = count($arr);
-		$i = 0;
+<?php
+function convertHashtags($str){
+	$regex = "/#+([a-zA-Z0-9_]+)/";
+	$str = preg_replace($regex, '<a href="hashtag.php?tag=$1">$0</a>', $str);
+	return($str);
+}
+$string = "I am #UberSilly and #MegaPlayful online";
+$string = convertHashtags($string);
+echo $string;
+?>
 
-		// whileloop söker igenom arryen efter en hashtag
-		while($i< $arrc){
-
-		  if (substr($arr[$i], 0, 1) === $htag) {
-		  // så att #-markerade ord blir länkar
-		      $arr[$i] = "<a href='#'>".$arr[$i]."</a>";
-
-		  }
-
-		  $i++;
-		}
-		//gör arrayen tillbaka till en sträng
-		$string = implode(" ", $arr);
-		return $string;
-		}
-		echo hashtag;
-		?>
 	<div class="tiny">
 		<form action='' method='post'>
 
