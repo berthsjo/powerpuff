@@ -9,47 +9,28 @@
 }
 
 @media screen and (max-width: 1152px) {
-  .logga {
-  margin-left: 0px;
-  padding-top: 0px;
-  width: 260px;
-}
+    
 }
 
 @media screen and (max-width: 1024px) {
-  .ruta {
-  max-width: 300px;
-  } 
-  .logga {
-  margin-left: 0px;
-  padding-top: 0px;
-  width: 260px;
+  #wrapper {
+  margin: 0 auto;
+  width: 800px;
 }
 }
 
 @media screen and (max-width: 960px) {
-  .ruta {
-  max-width: 300px;
-  } 
-  .logga {
-  margin-left: 0px;
-  padding-top: 0px;
-  width: 240px;
+  #wrapper {
+  margin: 0 auto;
+  width: 600px;
 }
-}
-
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-
 }
 
 @media screen and (max-width: 767px) {
-  .logga {
-  margin-left: 60px;
-  padding-top: 80px;
-  width: 170px;
+  #wrapper {
+  margin: 0 auto;
+  width: 500px;
+}
 }
 /* MENU */
 .menu {
@@ -59,15 +40,25 @@ and (orientation : portrait) {
 }
 
 @media screen and (max-width: 640px) {
+    #wrapper {
+    width: 100%;
+  }
 
+  table {
+    margin: 0;
+    min-width: 100%;
+  }
+
+  .loggaimg {
+    max-width: 10px;
+  }
+
+  table {
+    padding: 10px;
+  }
 }
 
-@media screen and (max-width: 560px) {
-  .logga {
-  margin-left: 40px;
-  padding-top: 80px;
-  width: 160px;
-}
+@media screen and (max-width: 560px) 
 
 }
 
@@ -79,27 +70,15 @@ and (orientation : landscape) {
 }
 
 @media screen and (max-width: 480px) {
-  .logga {
-  margin-left: 40px;
-  padding-top: 80px;
-  width: 110px;
-}
+  
 }
 
 @media screen and (max-width: 360px) {
-  .logga {
-  margin-left: 40px;
-  padding-top: 80px;
-  width: 80px;
-}
+
 }
 
 @media screen and (max-width: 360px) {
-  .logga {
-  margin-left: 40px;
-  padding-top: 80px;
-  width: 80px;
-}
+ 
 }
 
 

@@ -24,6 +24,9 @@ if(isset($_GET['delpost'])){
   <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="../css/meyerReset.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsiv.css">
+
+
   <script language="JavaScript" type="text/javascript">
 
   // Funktion som raderar inlägg och redirectar
