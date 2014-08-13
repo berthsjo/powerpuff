@@ -36,6 +36,8 @@ if($row['postID'] == ''){
         <div id="wrapperind">
         <p><a href="./">Startsidan</a></p>
 
+
+    <!-- Detta är ett test för hashtag # -->
         <?php
     function convertHashtags($str){
         $regex = "/#+([a-zA-Z0-9_]+)/";
