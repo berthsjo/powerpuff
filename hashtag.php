@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Blogg</title>
+    <link rel="stylesheet" href="css/meyerReset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsiv.css">
+      <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+  <div id="wrapper">
+    <img class="logindex" src="bilder/puff4.png">
+    <div id="wrapperind">
+
 <?php
 require 'includes/config.php';
 
@@ -39,3 +56,9 @@ try {
 //   echo $fulltag;
 // }
 ?>
+
+    </div>
+</div>
+
+</body>
+</html>
