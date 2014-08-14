@@ -92,37 +92,6 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		}
 	}
 	?>
-<?php
-function hashtag ($string) {
-	// klipp på mellanrummet signalerar ny item i arrayen
-
-	$words = explode(" ", $string);
-
-	// Loopa över alla enskilda ord, och håll i orden som referens (så kan vi skriva över dem!)
-	foreach ($words as &$word) {
-		# code...
-	  if (substr($word, 0, 1) === '#') {
-		  // så att #-markerade ord blir länkar.
-	  	$word = "<a href='#'>$word</a>"; # TODO: Vad ska det,  stå i länkens href??
-	  }
-	}
-	return implode(" ", $words);
-}
-echo hashtag('Jag ska på fest ikväll #taggad #glad');
-?>
-
-
-<?php
-// ERIKAS TEST HASHTAG
-function convertHashtags($str){
-	$regex = "/#+([a-zA-Z0-9_]+)/";
-	$str = preg_replace($regex, '<a href="hashtag.php?tag=$1">$0</a>', $str);
-	return($str);
-}
-$string = "I am #UberSilly and #MegaPlayful online";
-$string = convertHashtags($string);
-echo $string;
-?>
 
 
 	<div class="tiny">
