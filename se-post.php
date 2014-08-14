@@ -49,6 +49,8 @@ if($row['postID'] == ''){
     echo $string;
     ?>
 
+    
+
     <?php
     // Visar den valda posten.
         echo '<div>';
