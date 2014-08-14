@@ -37,17 +37,28 @@ if($row['postID'] == ''){
         <p><a href="./">Startsidan</a></p>
 
 
-    <!-- Detta är ett test för hashtag # -->
-        <?php
-    function convertHashtags($str){
-        $regex = "/#+([a-zA-Z0-9_]+)/";
-        $str = preg_replace($regex, '<a href="hashtag.php?tag=$1">$0</a>', $str);
-        return($str);
+<?php
+function hashtag ($string) {
+    // klipp på mellanrummet signalerar ny item i arrayen
+
+    $words = explode(" ", $string);
+
+    // Loopa över alla enskilda ord, och håll i orden som referens (så kan vi skriva över dem!)
+    foreach ($words as &$word) {
+        # code...
+        $testWord = strip_tags($word);
+      if (substr($testWord, 0, 1) === '#') { 
+          // så att #-markerade ord blir länkar.
+        $tag = substr($testWord, 1);
+        $word = "<a href='hashtag.php?tag=$tag'>$testWord</a>"; # TODO: Vad ska det,  stå i länkens href??
+      }
     }
-    $string = "I am #UberSilly and #MegaPlayful online";
-    $string = convertHashtags($string);
-    echo $string;
-    ?>
+    return implode(" ", $words);
+}
+//echo hashtag('Jag ska på fest ikväll #taggad #glad');
+?>
+
+
 
     <?php
     // Visar den valda posten.
@@ -55,7 +66,7 @@ if($row['postID'] == ''){
             echo '<h1>'.$row['postTitle'].'</h1>';
             echo '<p>Upplagd '.date('j/N/Y', strtotime($row['postDate'])).'</p>';
             echo '<br/>';
-            echo '<p>'.$row['postCont'].'</p>';
+            echo '<p>'.hashtag($row['postCont']).'</p>';
         echo '</div>';
     ?>
 

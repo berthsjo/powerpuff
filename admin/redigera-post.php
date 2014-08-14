@@ -2,12 +2,12 @@
 // Inkluderar config-filen
 require_once('../includes/config.php');
 
-// Sidan består av formulär som är uppbyggd med textområden.
-// Varje del blir en variabel i PHP när formuläret skickas.
-// Vi använder också ett litet färdigt verktyg som heter tinyMCE för att redigera/lägga till inlägg (http://www.tinymce.com).
+// I princip byggd som skriv post sidan.
+// Använder UPDATE statement istället för INSERT INTO för att matcha rätt kolumner och placeholders(rutor).
 // Om man inte är inloggad skickas man till login.php
 if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,8 +34,10 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 <div id="wrapper">
 
-
 	<?php include('meny.php');?>
+
+	<p><a href="./">Blog Admin Index</a></p>
+
 
 	<?php
 
@@ -48,6 +50,11 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		extract($_POST);
 
 		// Validerar
+
+	if($postID ==''){
+			$error[] = 'Detta inlägget saknar ett giltigt id!.';
+		}
+
 		if($postTitle ==''){
 			$error[] = 'Lägg till titel.';
 		}
@@ -60,17 +67,18 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 			$error[] = 'Lägg till innehåll.';
 		}
 
-		if(!isset($error)){
+
+	if(!isset($error)){
 
 			try {
 
 				// Inkluderar i databasen
-				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (:postTitle, :postDesc, :postCont, :postDate)') ;
+				$stmt = $db->prepare('UPDATE blog_posts SET postTitle = :postTitle, postDesc = :postDesc, postCont = :postCont WHERE postID = :postID') ;
 				$stmt->execute(array(
 					':postTitle' => $postTitle,
 					':postDesc' => $postDesc,
 					':postCont' => $postCont,
-					':postDate' => date('Y-m-d H:i:s')
+					':postID' => $postID
 				));
 
 				// Omdirigerar till indexsidan
@@ -85,50 +93,73 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 	}
 
-	// Kollar efter fel
+	?>
+	<?php
+
+		function hashtag($string) {
+		//variabel kopplad till #
+		$htag = "#";
+		// använder explode-funktionen för att konvertera strängen //till en array
+		//mellanrummet signalerar ny item i arrayen
+
+		$arr = explode(" ", $string);
+		$arrc = count($arr);
+		$i = 0;
+
+		// whileloop söker igenom arryen efter en hashtag
+		while($i< $arr){
+
+		  if (substr($arr[$i], 0, 1) === $htag) {
+		  // så att #-markerade ord blir länkar
+		  echo $arr[$i] = "<a href='#'>".$arr[$i]."</a>";
+
+		  }
+
+		  $i++;
+		}
+		//gör arrayen tillbaka till en sträng
+		$string = implode(" ", $arr);
+		return $string;
+		}
+		echo hashtag;
+		?>
+	<?php
+	// Kollar efter fel och hämtar felmeddelande
 	if(isset($error)){
 		foreach($error as $error){
-			echo '<p class="error">'.$error.'</p>';
+			echo $error.'<br />';
 		}
 	}
+
+		try {
+
+			$stmt = $db->prepare('SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = :postID') ;
+			$stmt->execute(array(':postID' => $_GET['id']));
+			$row = $stmt->fetch();
+
+		} catch(PDOException $e) {
+		    echo $e->getMessage();
+		}
+
 	?>
-<<<<<<< HEAD
-<?php
-function hashtag ($string) {
-	// klipp på mellanrummet signalerar ny item i arrayen
-
-	$words = explode(" ", $string);
-
-	// Loopa över alla enskilda ord, och håll i orden som referens (så kan vi skriva över dem!)
-	foreach ($words as &$word) {
-		# code...
-	  if (substr($word, 0, 1) === '#') {
-		  // så att #-markerade ord blir länkar.
-	  	$word = "<a href='$word'>$word</a>"; # TODO: Vad ska det,  stå i länkens href??
-	  }
-	}
-	return implode(" ", $words);
-}
-echo hashtag('Jag ska på fest ikväll #taggad #glad');
-?>
-=======
-
->>>>>>> FETCH_HEAD
-
 	<div class="tiny">
 		<form action='' method='post'>
+			<input type='hidden' name='postID' value='<?php echo $row['postID'];?>'>
 
 			<p><label>Titel</label><br />
-			<input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
+			<input type='text' name='postTitle' value='<?php echo $row['postTitle'];?>'></p>
 
 			<p><label>Beskrivning</label><br />
-			<textarea name='postDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
+			<textarea name='postDesc' cols='60' rows='10'><?php echo $row['postDesc'];?></textarea></p>
 
 			<p><label>Innehåll</label><br />
-			<textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
+			<textarea name='postCont' cols='60' rows='10'><?php echo $row['postCont'];?></textarea></p>
 
-			<div class="tinybutton"><input type='submit' name='submit' value='Skicka'></div>
+			<div class="tinybutton"><input type='submit' name='submit' value='Uppdatera'></div>
 
 		</form>
 	</div>
 </div>
+
+</body>
+</html>
