@@ -27,24 +27,16 @@ img.logindex {
 hr {
   color: #353535;
 }
-
-/*#logga {
-  margin-left: 50%;
-  margin-right: 50%;
-}*/
-
 #wrapper {
   margin:auto;
   width:900px;
 }
-
 #wrapperind {
   margin-top: 220px;
   background-color: #606060;
   padding: 30px;
   background-image:url(../bilder/bgposts.png);
 }
-
 #loggain {
   border: 1px solid #000;
   margin: 100px auto 0;
@@ -54,10 +46,13 @@ hr {
 
 #adminmeny {
   padding-left: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #adminmeny li {
-  float: left;
+  /*float: left;*/
+  display: inline-block;
   padding-left: 20px;
   list-style: none;
 }
