@@ -29,7 +29,7 @@
 @media screen and (max-width: 767px) {
   #wrapper {
   margin: 0 auto;
-  width: 500px;
+  width: 400px;
 }
 }
 /* MENU */
@@ -37,11 +37,20 @@
   word-spacing: 0px;
   font-size: 20px;
 } 
+  img .logindex {
+    max-width: 100px;
+  }
 }
 
 @media screen and (max-width: 640px) {
     #wrapper {
-    width: 100%;
+    width: 400px;
+  }
+  #wrapperind {
+    width: 300px;
+  }
+  img .logindex {
+    max-width: 100px;
   }
 
   table {
