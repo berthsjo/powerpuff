@@ -92,8 +92,9 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		}
 	}
 	?>
-//<<<<<<< HEAD
 <?php
+//<<<<<<< HEAD
+
 function hashtag ($string) {
 	// klipp på mellanrummet signalerar ny item i arrayen
 
@@ -110,10 +111,11 @@ function hashtag ($string) {
 	return implode(" ", $words);
 }
 echo hashtag();
-?>
 //=======
 
 //>>>>>>> FETCH_HEAD
+?>
+
 
 	<div class="tiny">
 		<form action='' method='post'>
