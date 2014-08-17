@@ -12,9 +12,10 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Admin - Skriv inlägg</title>
+  <title>Admin - Redigera inlägg</title>
   <link rel="stylesheet" href="../css/meyerReset.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
   <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 
   <script>
@@ -36,7 +37,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 	<?php include('meny.php');?>
 
-	<p><a href="./">Blog Admin Index</a></p>
+	<p><a href="./">Redigera inlägg</a></p>
 
 
 	<?php
@@ -121,7 +122,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		$string = implode(" ", $arr);
 		return $string;
 		}
-		echo hashtag;
+
 		?>
 	<?php
 	// Kollar efter fel och hämtar felmeddelande

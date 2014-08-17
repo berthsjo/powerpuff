@@ -15,6 +15,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
   <title>Admin - Skriv inlägg</title>
   <link rel="stylesheet" href="../css/meyerReset.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
   <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 
   <script>
