@@ -48,7 +48,7 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 	<form action="" method="post">
 	<p><label>Användare</label><input type="text" name="username" value=""  /></p>
 	<p><label>Lösenord</label><input type="password" name="password" value=""  /></p>
-	<p><label></label><input type="submit" name="submit" value="Login"  /></p>
+	<p><label></label><input type="submit" name="submit" value="Logga in"  /></p>
 	</form>
 
 </div>
