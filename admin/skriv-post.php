@@ -92,29 +92,7 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 		}
 	}
 	?>
-<?php
-//<<<<<<< HEAD
 
-function hashtag ($string) {
-	// klipp på mellanrummet signalerar ny item i arrayen
-
-	$words = explode(" ", $string);
-
-	// Loopa över alla enskilda ord, och håll i orden som referens (så kan vi skriva över dem!)
-	foreach ($words as &$word) {
-		# code...
-	  if (substr($word, 0, 1) === '#') {
-		  // så att #-markerade ord blir länkar.
-	  	$word = "<a href='$word'>$word</a>"; # TODO: Vad ska det,  stå i länkens href??
-	  }
-	}
-	return implode(" ", $words);
-}
-echo hashtag();
-//=======
-
-//>>>>>>> FETCH_HEAD
-?>
 
 
 	<div class="tiny">
