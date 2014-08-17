@@ -37,8 +37,6 @@ if(!$user->is_logged_in()){ header('Location: loggain.php'); }
 
 	<?php include('meny.php');?>
 
-	<p><a href="./">Redigera inlägg</a></p>
-
 
 	<?php
 
