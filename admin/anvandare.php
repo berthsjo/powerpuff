@@ -29,6 +29,7 @@ if(isset($_GET['deluser'])){
   <title>Admin - Användare</title>
   <link rel="stylesheet" href="../css/meyerReset.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
   <script language="JavaScript" type="text/javascript">
   function deluser(id, title)
   {
