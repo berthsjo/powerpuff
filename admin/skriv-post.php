@@ -109,7 +109,7 @@ function hashtag ($string) {
 	}
 	return implode(" ", $words);
 }
-echo hashtag('Jag ska på fest ikväll #taggad #glad');
+echo hashtag();
 ?>
 =======
 
