@@ -43,13 +43,14 @@ hr {
   padding: 0;
   width: 300px;
 }
-
+#logga {
+  
+}
 #adminmeny {
   padding-left: 0;
   margin: 0 auto;
   text-align: center;
 }
-
 #adminmeny li {
   /*float: left;*/
   display: inline-block;
